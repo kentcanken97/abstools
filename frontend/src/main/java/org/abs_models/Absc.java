@@ -200,13 +200,27 @@ public class Absc implements Callable<Integer> {
     		description = "solve constraint satisfaction problem (CSP) for the feature model")
     public boolean solve = false;
     
+    @Option(names = {"--maxProduct"},
+    		description = "print the solution that has the most number of feature")
+    public boolean maxProduct = false;
+    
     @Option(names = {"--isvoid"},
     		description = "check if any void feature exist in feature model")
     public boolean isvoid = false;
     
+    @Option(names = {"--nsol"},description = "count the number of solutions")
+    public boolean nsol = false;
+    
+    @Option(names = {"--noattr"}, description = "ignore model attributes ONLY WORK FOR MTVL ANALYSIS")
+    public boolean ignoreattr = false;
+    
     @Option(names = {"--core"},
-    		description = "Core")
+    		description = "check for core feature within the feature model")
     public boolean core = false;
+    
+    @Option(names = {"--variant"},
+    		description = "check for variant feature within the feature model")
+    public boolean variant = false;
     
     static class AbscVersionProvider implements IVersionProvider {
         public String[] getVersion() throws Exception {
