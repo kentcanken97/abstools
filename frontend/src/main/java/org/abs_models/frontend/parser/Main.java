@@ -265,7 +265,7 @@ public class Main {
         }
         if (!semErrs.containsErrors()) {
             typeCheckModel(m);
-            analyzeMTVL(m);
+            analyzeFeatureModel(m);
         }
     }
     
@@ -651,19 +651,19 @@ public class Main {
 	}
     }
     
-    private void analyzeMTVL(Model m) {
+    private void analyzeFeatureModel(Model m) {
         ProductDecl productDecl = null;
         
-        //remove attributes for mtvl analysis
+        //remove attributes for Feature Model
         if(arguments.ignoreattr) {
         	m.dropAttributes();
         }
         
-        try {
-        	productDecl = product == null? null : m.findProduct(product); 
-        }catch(WrongProgramArgumentException e) {
-        	
-        }
+//        try {
+//        	productDecl = product == null? null : m.findProduct(product); 
+//        }catch(WrongProgramArgumentException e) {
+//        	
+//        }
         
        if(m.hasMTVL()) {
     	   if(arguments.solve && arguments.ignoreattr) {
@@ -697,6 +697,21 @@ public class Main {
     	   if (arguments.variant) {
     		   ChocoSolver s = m.instantiateCSModel();
     		   System.out.println("Variant features: \n" + s.variantToStrings());
+    	   }
+    	   if (arguments.validPartialConfig != null) {
+    		   ChocoSolver s = m.instantiateCSModel();
+    		   ArrayList<String[]> listSRFeature = new ArrayList<String[]>();
+    		   
+               try {
+            	   listSRFeature = s.splitStrFeatures(arguments.validPartialConfig);
+               } catch (WrongProgramArgumentException e) {
+                   System.out.println(e);
+               }
+               
+               if (!listSRFeature.isEmpty()) {
+            	   System.out.println("Valid Partial Configuration Check: \n" + s.validPartialConfig(listSRFeature));
+               }
+               
     	   }
     	   
        }
