@@ -68,8 +68,6 @@ public class Main {
     public static final String ABS_STD_LIB = "abs/lang/abslang.abs";
     public static final String UNKNOWN_FILENAME = "<unknown file>";
     public Absc arguments = new Absc(); // tests often create a random Main object, need to initialize this
-    public String product; // used when mtvl analyzation
-
 
     /**
      * Legacy entry point for old scripts -- use org.abs_models.Absc

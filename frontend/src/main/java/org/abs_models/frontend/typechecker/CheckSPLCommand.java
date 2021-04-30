@@ -220,33 +220,33 @@ public class CheckSPLCommand implements Callable<Void> {
                     System.out.println("Number of solutions found: "+s.countSolutions());
                 }
             }
-     	   if (isvoid) {
-    		   ChocoSolver s = m.instantiateCSModel();
-    		   System.out.println(s.isVoid());
-    	   }
-    	   if (core) {
-    		   ChocoSolver s = m.instantiateCSModel();
-    		   System.out.println("Core features: \n" + s.coreToStrings());
-    	   }
-    	   if (variant) {
-    		   ChocoSolver s = m.instantiateCSModel();
-    		   System.out.println("Variant features: \n" + s.variantToStrings());
-    	   }
-    	   if (validPartialConfig != null) {
-    		   ChocoSolver s = m.instantiateCSModel();
-    		   ArrayList<String[]> listSRFeature = new ArrayList<String[]>();
-    		   
-               try {
-            	   listSRFeature = s.splitStrFeatures(validPartialConfig);
-               } catch (WrongProgramArgumentException e) {
-                   System.out.println(e);
-               }
+     	    if (isvoid) {
+    		    ChocoSolver s = m.instantiateCSModel();
+    		    System.out.println(s.isVoid());
+    	    }
+    	    if (core) {
+    		    ChocoSolver s = m.instantiateCSModel();
+    		    System.out.println("Core features: \n" + s.coreToStrings());
+    	    }
+    	    if (variant) {
+    		    ChocoSolver s = m.instantiateCSModel();
+    		    System.out.println("Variant features: \n" + s.variantToStrings());
+    	    }
+    	    if (validPartialConfig != null) {
+    		    ChocoSolver s = m.instantiateCSModel();
+    		    ArrayList<String[]> listSRFeature = new ArrayList<String[]>();
+    		    
+                try {
+                	listSRFeature = s.splitStrFeatures(validPartialConfig);
+                } catch (WrongProgramArgumentException e) {
+                    System.out.println(e);
+                }
                
-               if (!listSRFeature.isEmpty()) {
-            	   System.out.println("Valid Partial Configuration Check: \n" + s.validPartialConfig(listSRFeature));
-               }
+                if (!listSRFeature.isEmpty()) {
+            	    System.out.println("Valid Partial Configuration Check: \n" + s.validPartialConfig(listSRFeature));
+                }
                
-    	   }
+    	    }
         }
     }
 
