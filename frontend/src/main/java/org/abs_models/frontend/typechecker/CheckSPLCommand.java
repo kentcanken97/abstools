@@ -75,7 +75,7 @@ public class CheckSPLCommand implements Callable<Void> {
             paramLabel = "product")
     public String checkProduct;
     @Option(names = {"--isvoid"},
-    		description = "check if any void feature exist in feature model")
+    		description = "check if feature model is void")
     public boolean isvoid = false;
     @Option(names = {"--core"},
     		description = "check for core feature within the feature model")
@@ -86,7 +86,7 @@ public class CheckSPLCommand implements Callable<Void> {
     public boolean variant = false;
     
     @Option(names = {"--validpconfig"},
-    		description = "check if the entered configuration is present in solution",
+    		description = "check if the entered configuration is valid in feature model",
     		paramLabel="feature")
     public String validPartialConfig;
 
