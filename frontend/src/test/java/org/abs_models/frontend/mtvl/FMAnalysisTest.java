@@ -131,7 +131,7 @@ public class FMAnalysisTest extends FrontendTest {
 	      assertEquals(result2, solver.variantToStrings());
 	  }
 	  
-	  //Test Case Form U004
+	  //Test Case Form ID = U004
 	  @Test
 	  public void validpartialconfig() {
 		  Model model = assertParse(helloFM);
