@@ -62,6 +62,7 @@ public class FMAnalysisTest extends FrontendTest {
 	      assertEquals(10, solver2.countSolutions());
 	  }
 	  
+	  //Test Case Form ID = U001
 	  @Test
 	  public void isvoid() {
 		  //Test Case 1 empty FM 
@@ -79,6 +80,7 @@ public class FMAnalysisTest extends FrontendTest {
 	      assertEquals("Feature Model is not void.", solver.isVoid());
 	  }
 	  
+	  //Test Case Form ID = U002
 	  @Test
 	  public void core() {
 		  String result1 = "FM\n";
@@ -101,6 +103,7 @@ public class FMAnalysisTest extends FrontendTest {
 	      assertEquals(result2, solver.coreToStrings());
 	  }
 	  
+	  //Test Case Form ID = U003
 	  @Test
 	  public void variant() {
 		  String result1 = "";
@@ -128,6 +131,7 @@ public class FMAnalysisTest extends FrontendTest {
 	      assertEquals(result2, solver.variantToStrings());
 	  }
 	  
+	  //Test Case Form ID = U004
 	  @Test
 	  public void validpartialconfig() {
 		  Model model = assertParse(helloFM);
