@@ -174,11 +174,11 @@ public class FMAnalysisTest extends FrontendTest {
 		  assertEquals(resultInvalid, solver.validPartialConfig(listInvalidSRFeature));	  	  
 		  
 		  //Test with Empty model
-		  //Test Case 1 input "English,French"
+		  //Test Case 3a input "English,French"
 		  solver = this.resetSolver(modelEmpty);
 		  assertEquals(resultInvalid, solver.validPartialConfig(listInvalidSelectedFeat));
 		  
-		  //Test Case 2 input "<English,Dutch>,<French>"
+		  //Test Case 3b input "<English,Dutch>,<French>"
 		  solver = this.resetSolver(modelEmpty);
 		  assertEquals(resultInvalid, solver.validPartialConfig(listInvalidSRFeature));
 		  
