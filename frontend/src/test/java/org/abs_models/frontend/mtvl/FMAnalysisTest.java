@@ -131,6 +131,7 @@ public class FMAnalysisTest extends FrontendTest {
 	  @Test
 	  public void validpartialconfig() {
 		  Model model = assertParse(helloFM);
+		  Model modelEmpty = assertParse(emptyFM);
 		  ChocoSolver solver = new ChocoSolver();
 	  
 		  //Test Case 1a input "English,UK"
@@ -171,5 +172,15 @@ public class FMAnalysisTest extends FrontendTest {
 		  
 		  solver = this.resetSolver(model);
 		  assertEquals(resultInvalid, solver.validPartialConfig(listInvalidSRFeature));	  	  
+		  
+		  //Test with Empty model
+		  //Test Case 1 input "English,French"
+		  solver = this.resetSolver(modelEmpty);
+		  assertEquals(resultInvalid, solver.validPartialConfig(listInvalidSelectedFeat));
+		  
+		  //Test Case 2 input "<English,Dutch>,<French>"
+		  solver = this.resetSolver(modelEmpty);
+		  assertEquals(resultInvalid, solver.validPartialConfig(listInvalidSRFeature));
+		  
 	  }
 }
