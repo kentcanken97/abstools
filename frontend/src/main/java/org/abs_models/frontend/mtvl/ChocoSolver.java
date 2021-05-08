@@ -702,7 +702,7 @@ public class ChocoSolver {
     	boolean validConfig = false;
     	
     	String[] sFeatures = listSRFeature.get(0);
-    	//loop for checking selected feature
+    	//loop for going through all solution
     	for(Map<String,Integer>sol: solutions) {
     		boolean validSol = true;
     		
@@ -715,7 +715,7 @@ public class ChocoSolver {
     			}
     		}
     		
-    		//if selected feature all is satisfy than check for removed feature
+    		//if all selected feature is satisfy than check for removed feature
     		if(validSol && listSRFeature.size() == 2) {
     			String[] rFeatures = listSRFeature.get(1);
     			
