@@ -15,6 +15,10 @@ Undergraduate Individual Disertation
 
 This is an final year project for my undergraduate certification. This project is an extended version of the original ABS compiler/tool suite with implementation of other feature model analysis operation added. The original ABS compiler/tool suite can be found at https://github.com/abstools/abstools.
 
+**Warning**  
+** Please run the project with a Linux/Unix OS if possible. Example, Any Linux or Mac OS  
+** You may run into compilation issue when running with Window OS
+
 Software Requirement
 -------------------
 * Java version 11 or greater.
